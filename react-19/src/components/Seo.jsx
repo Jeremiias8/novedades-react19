@@ -1,5 +1,8 @@
   
-export const Seo = ({ title, description }) => {
+export const Seo = ({ 
+  title = 'Hola, React 19', 
+  description = 'Description de la library' 
+}) => {
   
   return (
     <>
@@ -9,3 +12,10 @@ export const Seo = ({ title, description }) => {
   )
 
 }
+
+/*
+Seo.defaultProps = {
+  title: 'Hola, React 19',
+  description: 'Hey, react description'
+}
+*/

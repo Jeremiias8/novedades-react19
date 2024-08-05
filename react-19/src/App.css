@@ -4,3 +4,41 @@
   padding: 2rem;
   text-align: center;
 }
+
+.app__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.app__container > button {
+  transition: width 1.5s height 1.5s 300ms ease-in-out;
+  -webkit-transition: width 1.5s height 1.5s 300ms ease-in-out;
+  -moz-transition: width 1.5s height 1.5s 300ms ease-in-out;
+  -ms-transition: width 1.5s height 1.5s 300ms ease-in-out;
+  -o-transition: width 1.5s height 1.5s 300ms ease-in-out;
+  cursor: pointer;
+}
+.app__container > button:hover {
+  background: linear-gradient(
+    to bottom,
+    rgb(109, 109, 238) 0%,
+    lightblue 100%
+  );
+}
+
+.form__container > form > input {
+  margin: 1rem;
+  padding: 0.25rem;
+}
+
+.logo__container {
+  margin: 1rem;
+}
+.logo__container > img {
+  width: 160px;
+  height: 130px;
+  max-height: 150px;
+}
