@@ -7,6 +7,7 @@ import { Seo } from './components/Seo'
 import { Form } from './components/Form'
 import { preload, preinit, prefetchDNS } from 'react-dom'
 import { Logo } from './components/Logo'
+import { UseFetchExample } from './clase/useExample'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -61,6 +62,10 @@ function App() {
         <button onClick={() => setShow(!show)}>Toggle</button>
 
         {show && <Form />}        
+
+        <div>
+          <UseFetchExample />
+        </div>
 
       </div>
     </>

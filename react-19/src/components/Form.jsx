@@ -1,8 +1,14 @@
-import React from 'react'
+import React, { forwardRef } from 'react'
 import '../App.css'
 import { useRef } from 'react'
 
-export const Form = () => {
+const Input = forwardRef(( props, ref ) => {
+  return <input ref={inputRef} placeholder='Ej: Jeredev' type='text' />
+})
+
+Input.displayName = 'Input'
+
+export function Form () {
 
   const inputRef = useRef();
 
@@ -21,10 +27,7 @@ export const Form = () => {
         />
 
         <form>
-          <input ref={inputRef} 
-            placeholder='Ej: Jere' 
-            type='text'   
-          />
+          <Input ref={inputRef} />
           <button onClick={focusInput} type='submit'>Submit</button>
         </form>
     </div>
