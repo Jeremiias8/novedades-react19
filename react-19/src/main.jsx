@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { renderToString } from 'react-dom/server'
 import App from './App.jsx'
 import './index.css'
+import { UserContextProvider } from './context/user.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -10,4 +11,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   </React.StrictMode>,
 )
 
-console.log(renderToString(<App />));
+// console.log(renderToString(<App />));

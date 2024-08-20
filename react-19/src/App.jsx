@@ -7,12 +7,16 @@ import { Seo } from './components/Seo'
 import { Form } from './components/Form'
 import { preload, preinit, prefetchDNS } from 'react-dom'
 import { Logo } from './components/Logo'
-import { UseFetchExample } from './clase/useExample'
+import { UserContext } from './context/user'
+import { UseContextExample } from './clase/UseContextExample'
+import { Actions } from './clase/Actions'
 
 function App() {
   const [count, setCount] = useState(0)
 
   const [show, setShow] = useState(false);
+
+  const { isLogged, updateUser } = use(UserContext);
 
   // solo cargan una vez el contenido, lo dejan ya almacenado en la caché
   preload('https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css'
@@ -64,8 +68,18 @@ function App() {
         {show && <Form />}        
 
         <div>
-          <UseFetchExample />
+          <UseContextExample />
         </div>
+
+        <div>
+          <Actions />
+        </div>
+
+        <footer
+          style={{ position: 'fixed', bottom: 0 }}
+        >
+          {isLogged ? 'Estás dentro' : 'No pudiste ingresar'}  
+        </footer>
 
       </div>
     </>

@@ -1,6 +1,6 @@
 import React, { Suspense, useState } from 'react'
 
-
+// componente servidor
 export const UseFetchExample = () => {
   
     const [name, setName] = useState('');
@@ -20,8 +20,10 @@ export const UseFetchExample = () => {
                 })
                 .then(data => data)
                 .catch(error => 
-                    { setError(true); return { 
-                        error: true, message: 'Error al solicitar la api' 
+                    { 
+                        setError(true); return { 
+                            error: true, 
+                            message: 'Error al solicitar la api' 
                 }});
     }
 
@@ -36,6 +38,11 @@ export const UseFetchExample = () => {
                 onChange={e => setName(e.target.value)} 
                 required
             />
+
+            <input type='url' id='website' required />
+            <input type='text' id='name' autoFocus required />
+
+            <input type='file' id='archivos' multiple />
         </form>
 
         <Suspense fallback={<div>Cargando...</div>}>
@@ -50,6 +57,7 @@ export const UseFetchExample = () => {
 
 }
 
+// componente cliente
 function ShowPokemon ({ pokemonPromise }) {
 
     const pokemon = use(pokemonPromise);
